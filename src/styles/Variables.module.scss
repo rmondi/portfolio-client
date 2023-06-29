@@ -1,0 +1,59 @@
+/** Layout */
+$min-width-xs: 320px !default;
+$min-width-sm: 768px !default;
+$min-width-md: 1200px !default;
+$min-width-lg: 1600px !default;
+
+$container-max-md-width: 1100px;
+$container-max-lg-width: 1440px;
+
+$nav-height: 60px;
+$footer-height-xs: 76px;
+$footer-height-lg: 96px;
+
+
+/** Fonts */
+$title-regular: 'Playfair Display', serif;
+$main-light: 'Roboto', sans-serif;
+
+/** Colors */
+$black: #000;
+$white: #FFF;
+
+$gray: #555555;
+$gray-medium: #CED6E0;
+$gray-light: #EAEAEA;
+$gray-extralight: #F8F8F8;
+
+$brown: #CDC9C3;
+
+$red: #FF4757;
+
+$yellow: #E8DAB2;
+
+$blue: #4F6D7A;
+$blue-light: #C0D6DF;
+
+$orange: #DD6E42;
+
+$green: #2ED573;
+
+:export {
+  minWidthXs: $min-width-xs;
+  minWidthSm: $min-width-sm;
+  minWidthMd: $min-width-md;
+  minWidthLg: $min-width-lg;
+  black: $black;
+  white: $white;
+  gray: $gray;
+  grayMedium: $gray-medium;
+  grayLight: $gray-light;
+  grayExtraLight: $gray-extralight;
+  brown: $brown;
+  red: $red;
+  yellow: $yellow;
+  blue: $blue;
+  blueLight: $blue-light;
+  orange: $orange;
+  green: $green;
+}

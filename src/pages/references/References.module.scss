@@ -1,0 +1,155 @@
+@use "sass:math";
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.references {
+  position: relative;
+}
+
+.reference {
+
+  &__container {
+    margin-top: 30px;
+
+    @include viewport-sm {
+      margin-top: 40px;
+    }
+
+    @include viewport-md {
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+    }
+  }
+
+  &__visuals {
+    padding-bottom: 10px;
+    
+    @include viewport-md {
+      flex: 0 0 percentage(math.div(7,12));
+      padding-bottom: 35px;
+    }
+  }
+  
+  &__visualsWrapper {
+    padding-top: percentage(math.div(900,1440));
+    position: relative;
+    height: 0;
+    
+  }
+
+  &__desktop,
+  &__mobile {
+    position: absolute;
+  }
+  
+  &__desktop {
+    z-index: 1;
+    top: 0;
+    right: 10px;
+    left: 0;
+    bottom: 0;
+
+    @include viewport-sm {
+      right: 30px;
+    }
+  }
+
+  &__mobile {
+    z-index: 2;
+    right: 0;
+    bottom: -10px;
+    height: calc((100% / 900) / 1.2 * 800);
+    width: calc((100% / 1440) / 1.2 * 360);
+
+    @include viewport-sm {
+      bottom: -30px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    img {
+      box-shadow: 1px 1px 8px rgba($black, .15);
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+
+    @include viewport-sm {
+      margin-top: 60px;
+    }
+
+    @include viewport-md {
+      flex: 0 0 percentage(math.div(4,12));
+      margin-top: 0;
+      margin-left: percentage(math.div(1,12));
+    }
+  }
+
+  &__experience {
+    font-family: $title-regular;
+    font-size: 16px;
+    transition: color ease-in-out .3s;
+
+    @include viewport-sm {
+      font-size: 18px;
+    }
+
+    @include viewport-md {
+      font-size: 20px;
+    }
+
+    @include viewport-lg {
+      font-size: 24px;
+    }
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__year {
+    margin-left: 5px;
+  }
+
+  &__details {
+    margin-top: 5px;
+  }
+
+  &__detail {
+    position: relative;
+    display: block;
+    padding-left: 12px;
+    line-height: 1.375em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7.5px;
+      left: 0;
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      background-color: $gray;
+    }
+  }
+
+  &__skills {
+    margin-top: 15px;
+
+    @include viewport-lg {
+      margin-top: 30px;
+    }
+  }
+
+  &__cta {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}

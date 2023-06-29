@@ -1,0 +1,46 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.pager {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    gap: 7.5px;
+  }
+
+  &__item {
+
+    &.disabled {
+      display: none;
+    }
+
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid $orange;
+    font-size: 13px;
+    line-height: 1em;
+    color: $orange;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+  }
+  
+  &__link:hover,
+  &__active {
+    background-color: $orange;
+    color: $white;
+  }
+
+  &__prev,
+  &__next {
+    display: none;
+  }
+}

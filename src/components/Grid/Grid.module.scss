@@ -1,0 +1,33 @@
+@use "sass:math";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.grid {
+
+  &__items {
+    
+    @include viewport-sm {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+  }
+}
+
+.gridItem {
+  margin: 20px 0;
+
+  @include viewport-sm {
+    flex: 0 0 50%;
+    padding: 10px;
+    margin: 0;
+  }
+
+  @include viewport-md {
+    flex: 0 0 percentage(math.div(1,4));
+  }
+
+  @include viewport-lg {
+    flex: 0 0 25%;
+  }
+}

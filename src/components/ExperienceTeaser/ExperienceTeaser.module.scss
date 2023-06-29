@@ -1,0 +1,87 @@
+@use "sass:math";
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.experience {
+  height: 100%;
+  
+  &__link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity ease-in-out .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__container {
+    height: 100%;
+
+    @include viewport-sm {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+
+    @include viewport-sm {
+      flex: 0 0 percentage(math.div(3,8));
+      height: auto;
+    }
+  }
+
+  &__logo {
+    width: auto;
+    height: 50px;
+
+    @include viewport-sm {
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    margin-top: 10px;
+
+    @include viewport-sm {
+      flex: 0 0 percentage(math.div(9,16));
+      margin-top: 0;
+      margin-right: percentage(math.div(1,16));
+    }
+  }
+
+  &__name {
+    font-family: $title-regular;
+    font-size: 20px;
+    line-height: 1.33em;
+    color: $blue;
+
+    @include viewport-md {
+      font-size: 24px;
+    }
+  }
+
+  &__dates {
+    margin-top: 5px;
+
+    @include viewport-md {
+      margin-top: 8px;
+    }
+  }
+
+  &__description {
+    margin-top: 10px;
+
+    @include viewport-md {
+      margin-top: 16px;
+    }
+  }
+}

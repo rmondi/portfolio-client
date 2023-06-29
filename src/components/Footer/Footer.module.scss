@@ -1,0 +1,81 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.footer {
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: $footer-height-xs;
+
+    @include viewport-sm {
+      padding: 0 60px;
+    }
+
+    @include viewport-md {
+      padding: 30px 0;
+      margin: 0 auto;
+      width: $container-max-md-width;
+    }
+
+    @include viewport-lg {
+      width: $container-max-lg-width;
+      height: $footer-height-lg;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background-color: $blue;
+    }
+  }
+
+  &__content {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+    font-family: $title-regular;
+    font-size: 16px;
+    line-height: 1em;
+    color: $white;
+
+    @include viewport-md {
+      font-size: 20px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    transition: opacity ease-in-out .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: auto;
+  }
+}

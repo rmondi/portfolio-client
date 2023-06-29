@@ -1,0 +1,25 @@
+@import "@/styles/Variables.module.scss";
+
+@mixin viewport-xs($min-width: $min-width-xs) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin viewport-sm($min-width: $min-width-sm) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin viewport-md($min-width: $min-width-md) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin viewport-lg($min-width: $min-width-lg) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}

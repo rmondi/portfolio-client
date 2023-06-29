@@ -1,0 +1,10 @@
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.mainLayout {
+  padding-top: 60px;
+  transition: padding-top ease-in-out .3s;
+
+  &.isScrolled {
+    padding-top: 50px;
+  }
+}

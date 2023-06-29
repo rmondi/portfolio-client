@@ -1,0 +1,77 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.skill {
+  
+  &__container {
+    margin-top: 30px;
+    
+    @include viewport-sm {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    @include viewport-md {
+      margin-top: 60px;
+    }
+  }
+
+  &__icon {
+
+    @include viewport-sm {
+      flex: 0 0 100px;
+      order: 2;
+    }
+
+    @include viewport-md {
+      flex: 0 0 140px;
+    }
+
+    @include viewport-lg {
+      flex: 0 0 160px;
+    }
+
+    img {
+      margin: 0 auto;
+      width: 40% !important;
+      max-height: 160px !important;
+
+      @include viewport-sm {
+        width: 100% !important;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+    
+    @include viewport-sm {
+      flex-grow: 1;
+      order: 1;
+      margin-top: 0;
+    }
+  }
+
+  &__details {
+    margin-top: 15px;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 12px;
+    line-height: 1.42em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7.5px;
+      left: 0;
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $gray;
+    }
+  }
+}

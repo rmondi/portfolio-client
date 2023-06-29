@@ -1,0 +1,34 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.referenceList {
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    padding-top: 30px;
+
+    h2 {
+      line-height: 1em;
+    }
+  }
+
+  &__separator {
+    margin-left: 10px;
+    height: 1px;
+    flex-grow: 1;
+    background-color: $blue;
+
+    @include viewport-md {
+      margin-left: 20px;
+    }
+  }
+
+  &__seeMore {
+    margin-top: 20px;
+
+    @include viewport-sm {
+      margin-top: 20px;
+    }
+  }
+}

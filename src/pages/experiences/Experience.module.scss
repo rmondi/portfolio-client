@@ -1,0 +1,79 @@
+@use "sass:math";
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.experience {
+
+  &__container,
+  &__content {
+    margin-top: 30px;
+  }
+
+  &__container {
+
+    @include viewport-sm {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    @include viewport-md {
+      margin-top: 60px;
+    }
+  }
+
+  &__logo,
+  &__content {
+
+    @include viewport-sm {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__logo {
+
+    @include viewport-sm {
+      order: 2;
+    }
+
+    img {
+      margin: 0 auto;
+      width: 80%;
+      height: auto;
+
+      @include viewport-sm {
+        width: 70%;
+      }
+
+      @include viewport-md {
+        width: 50%;
+      }
+    }
+  }
+
+  &__content {
+
+    @include viewport-sm {
+      order: 1;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    margin-top: 5px;
+
+    @include viewport-md {
+      margin-top: 8px;
+    }
+
+    a {
+      margin-left: 5px;
+      color: $orange;
+      transition: color ease-in-out .3s;
+
+      &:hover {
+        color: darken($orange, 10%);
+      }
+    }
+  }
+}

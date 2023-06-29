@@ -1,0 +1,16 @@
+@import "@/styles/Variables.module.scss";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 30px;
+  height: 40px;
+  border: 1px solid $orange;
+  color: $orange;
+  transition: all ease-in-out .3s;
+
+  &:hover {
+    background-color: $orange;
+    color: $white;
+  }
+}

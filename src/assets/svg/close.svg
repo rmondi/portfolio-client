@@ -1,0 +1,16 @@
+<svg
+   viewBox="0 0 256 256"
+   width="256"
+   height="256"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+     fill="none"
+     stroke="#000000"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="32"
+     d="M 240,240 16,16 M 240,16 16,240"
+   />
+</svg>

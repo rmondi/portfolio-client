@@ -1,0 +1,96 @@
+@use "sass:math";
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.experiences {
+  
+  &__header {
+
+    @include viewport-sm {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__body {
+    margin-top: 32px;
+
+    @include viewport-md {
+      margin-top: 52px;
+    }
+  }
+
+  &__slider {
+
+    .arrows {
+      padding-right: 15px;
+      margin-top: -32px;
+      transform: translateY(-13px);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+
+      @include viewport-sm {
+        margin: 0;
+        padding: 0;
+        transform: none;
+        display: block;
+        gap: 0;
+      }
+    }
+
+    .arrowPrev,
+    .arrowNext {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: 0;
+      height: 30px;
+      width: 30px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 40% auto;
+      background-position: center;
+      border: 1px solid $orange;
+      transition: opacity ease-in-out .3s;
+      opacity: 1;
+
+      @include viewport-sm {
+        position: absolute;
+        top: 50%;
+        height: 80px;
+        width: 50px;
+        border: none;
+        background-size: auto 100%;
+      }
+
+      @include viewport-md {
+        height: 108px;
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    .arrowPrev {
+      background-image: url("../../assets/svg/reference_prev.svg");
+
+      @include viewport-sm {
+        left: 0;
+        transform: translate(-50%, -50%);
+        background-image: url("../../assets/svg/experience_prev.svg");
+      }
+    }
+
+    .arrowNext {
+      background-image: url("../../assets/svg/reference_next.svg");
+
+      @include viewport-sm {
+        right: 0;
+        transform: translate(50%, -50%);
+        background-image: url("../../assets/svg/experience_next.svg");
+      }
+    }
+  }
+}

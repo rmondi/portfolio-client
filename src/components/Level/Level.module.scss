@@ -1,0 +1,51 @@
+@import "@/styles/Variables.module.scss";
+
+.level {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    line-height: 1em;
+  }
+
+  &__list {
+    display: flex;
+    gap: 5px;
+    margin-left: 15px;
+
+    &.low {
+
+      .level__item {
+
+        &:first-child {
+          background-color: $red;
+        }
+      }
+    }
+
+    &.medium {
+
+      .level__item {
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          background-color: $orange;
+        }
+      }
+    }
+
+    &.high {
+
+      .level__item {
+        background-color: $green;
+      }
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 20px;
+    height: 5px;
+    background-color: $gray-medium;
+  }
+}

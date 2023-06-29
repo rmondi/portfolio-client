@@ -1,0 +1,44 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.tags {
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+}
+
+.tag {
+  
+  &__link,
+  &__label {
+    display: block;
+    padding: 5px 4px;
+    border-radius: 5px;
+    border: 1px solid $orange;
+    font-family: $main-light;
+    font-size: 10px;
+    line-height: 1em;
+    color: $orange;
+
+    @include viewport-md {
+      padding: 5px 8px;
+    }
+
+    @include viewport-lg {
+      font-size: 12px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: all ease-in-out .3s;
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+}

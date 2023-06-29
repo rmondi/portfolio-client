@@ -1,0 +1,98 @@
+@use "sass:math";
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.reference {
+  height: 100%;
+  transition: opacity ease-in-out .3s;
+
+  &:hover {
+    opacity: .9;
+
+    .reference__image {
+      transform: scale(1.01);
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+  }
+  
+  &__container,
+  &__header {
+    overflow: hidden;
+  }
+  
+  &__container {
+    height: 100%;
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 1px 1px 3px rgba($black, .15);
+
+    @include viewport-md {
+      box-shadow: none;
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding-top: percentage(math.div(216,345));
+    height: 0;
+  }
+
+  &__body {
+    padding: 16px 8px;
+    
+    @include viewport-sm {
+      padding: 16px;
+    }
+  }
+
+  &__visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform ease-in-out .3s;
+  }
+
+  &__title {
+    font-family: $title-regular;
+    font-size: 20px;
+    line-height: 1.33em;
+    color: $blue;
+
+    @include viewport-lg {
+      font-size: 24px;
+    }
+  }
+
+  &__experience {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.16em;
+    color: $gray;
+
+    @include viewport-lg {
+      font-size: 16px;
+    }
+  }
+
+  &__year {
+    font-size: .8em;
+    margin-left: 3px;
+  }
+
+  &__skills {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,19 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.pageHeader {
+
+  &__introduction {
+    margin-top: 30px;
+  
+    @include viewport-md {
+      margin-top: 40px;
+      padding-right: 80px;
+      max-width: 50%;
+    }
+  
+    @include viewport-lg {
+      padding-right: 100px;
+    }
+  }
+}

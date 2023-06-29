@@ -1,0 +1,210 @@
+@import "@/styles/Variables.module.scss";
+@import "@/tools/Viewport/Viewport.module.scss";
+
+.nav {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  max-width: 100vw;
+  
+  &__container {
+    height: $nav-height;
+    transition: height ease-in-out .3s;
+
+    @include viewport-md {
+      margin: 0 auto;
+      width: $container-max-md-width;
+    }
+
+    @include viewport-lg {
+      width: $container-max-lg-width;
+    }
+
+    :global(.isScrolled) & {
+      height: 50px;
+    }
+  }
+  
+  &__head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    background-color: $white;
+    transition: opacity ease-in-out .3s;
+
+    :global(.isScrolled) & {
+      opacity: .9;
+    }
+
+    @include viewport-sm {
+      padding: 0 60px;
+    }
+
+    @include viewport-md {
+      display: none;
+    }
+  }
+
+  &__toggle {
+    margin-right: -10px;
+
+    @include viewport-md {
+      display: none;
+    }
+  }
+
+  &__body {
+    z-index: 1000;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    transition: transform ease-in-out .6s;
+
+    @include viewport-md {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      transform: none;
+      background-color: transparent;
+    }
+
+    :global(.isScrolled) & {
+      top: 50px;
+
+      @include viewport-md {
+        top: auto;
+      }
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    &::before {
+
+      @include viewport-md {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 100vw;
+        transform: translateX(-50%);
+        background-color: $white;
+        // box-shadow: 1px 1px 8px rgba($black, .15);
+        transition: opacity ease-in-out .3s;
+      }
+
+      :global(.isScrolled) & {
+
+        @include viewport-md {
+          opacity: .9;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include viewport-md {
+      justify-content: flex-end;
+    }
+  }
+
+  &__list {
+
+    @include viewport-md {
+      display: flex;
+    }
+  }
+
+  &__item {
+
+    &:last-child {
+
+      .nav__link {
+
+        @include viewport-md {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    @include viewport-md {
+      padding: 0 15px;
+    }
+
+    &.selected,
+    &:hover {
+      
+      span {
+
+        @include viewport-md {
+          color: $orange;
+        }
+
+        &::after {
+
+          @include viewport-md {
+            right: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    span {
+      font-size: 24px;
+      line-height: 1em;
+      text-align: center;
+      color: $blue;
+      transition: color ease-in-out .3s;
+
+      @include viewport-md {
+        position: relative;
+        font-size: 16px;
+      }
+
+      &::after {
+
+        @include viewport-md {
+          content: "";
+          position: absolute;
+          right: 50%;
+          bottom: -4px;
+          left: 50%;
+          height: 1px;
+          background-color: $orange;
+          transition: right ease-in-out .3s,
+                      left ease-in-out .3s;
+        }
+      }
+    }
+  }
+}
