@@ -2,7 +2,8 @@
   opacity: 0;
   
   &--up {
-    transform: translateY(30px);
+    // transform: translateY(30px);
+    margin-top: 30px;
   }
 
   &--down {
@@ -21,6 +22,7 @@
 .reveal-visible {
   opacity: 1;
   transform: none;
+  margin: 0;
   transition: all .6s ease-in-out;
 }
 
