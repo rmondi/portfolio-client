@@ -43,7 +43,7 @@ export const getServerSideProps = async ({ res }) => {
 
   const reference_query = `
     query {
-      references {
+      references (pagination: {start: 0, limit: -1}) {
         data {
           attributes {
             slug
