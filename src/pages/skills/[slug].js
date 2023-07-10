@@ -115,7 +115,7 @@ export const getStaticProps = async ({ params }) => {
             details {
               name
             }
-            references {
+            references (sort: "year:desc") {
               data {
                 attributes {
                   name
